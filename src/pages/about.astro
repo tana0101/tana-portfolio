@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | YI LIN" description="About YI LIN">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="YI LIN (tana)"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="https://github.com/tana0101/fuwari/blob/main/src/assets/images/banner.jpg?raw=true"
+					alt="Yi Lin at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Founding member of <a href="https://www.programing.tw/">普羅程式</a>, serving as spokesperson and programmer, responsible for business, technology, and product development tasks within the team.Technically focused on AI, full-stack development, and committed to promoting education and innovative entrepreneurship.
+					</p>
+					<p>
+						Additionally, an amateur photography enthusiast and guitarist in a band, passionate about music and photography.
+					</p>					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Tools:</h2>
+				<div class="content">
+					<div class="image-container">
+						<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> 
+						<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/>
+						<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/>
+						<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/>
+						<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/>
+						<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+						<img src="https://github.com/tana0101/tana0101/blob/main/Javascript.png?raw=true" alt="Javascript" width="40" height="40"/> 
+						<img src="https://github.com/tana0101/tana0101/blob/main/php.png?raw=true" alt="php" width="40" height="40"/>
+						<img src="https://github.com/tana0101/tana0101/blob/main/vue.png?raw=true" alt="vue" width="40" height="40"/>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p><strong>Bachelor</strong></p>
+					<ul>
+						<li>National Taiwan Ocean University - Computer Science and Engineering</li>
+					</ul>
+					<p><strong>Master</strong></p>
+					<ul>
+						<li>National Cheng Kung University - Computer Science and Information Engineering</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Publication</h2>
+				<div class="content">
+					<ul>
+						<li>
+							<a href="https://ieeexplore.ieee.org/document/10347502">
+								Enhancing Underwater Images: Automatic Colorization using Deep Learning and Image Enhancement Techniques, Y. Lin, C. -W. Hung, Y. -J. Wang, C. -C. Liao and Y. -S. Tsai
+							</a>
+							<ul>
+								<li>
+									<a href="https://github.com/NTOU-Arrays-Start-at-One/Give-ocean-a-piece-of-your-mind">
+										GitHub Repository: Give Ocean A Piece Of Your Mind
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Personal Website</h2>
+				<div class="content">
+					<ul>
+						<li>
+							<a href="https://tana0101.vercel.app/">
+								tana's blog
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
