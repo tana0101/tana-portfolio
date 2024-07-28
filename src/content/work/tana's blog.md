@@ -1,7 +1,7 @@
 ---
 title: tana's blog
 publishDate: 2024-05-3 00:00:00
-img: /assets/blog.png
+img: /assets/project/tana's blog/blog.png
 img_alt: 暫定
 description: |
   A personal blog made with the static blog template fuwari and the astro framework.

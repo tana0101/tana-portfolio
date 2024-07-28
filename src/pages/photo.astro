@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import PortfolioPreview from '../components/PortfolioPhoto.astro';
+import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const photos = (await getCollection('photo')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="My photo | Yi Lin"
+	description="Learn about Yi Lin's most recent photos"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="My photo"
+				tagline="記錄世界的一隅，保留每一刻的記憶與故事。"
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					photos.map((photo) => (
+						<li>
+							<PortfolioPreview photo={photo} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
